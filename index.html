@@ -324,20 +324,6 @@
                 smallGlobe.style.transform = 'translate(50px, 50px)';
                 section2.style.visibility = 'hidden';
             }
-
-            // Effect when Section 2 is scrolled out of view
-            if (section2Top < windowHeight / 2) {
-                globe1.style.transform = 'scale(1) translateX(0)';
-                globe1.classList.remove('reshap');
-                smallGlobe.style.transform = 'translate(50px, 50px)';
-                section2.style.visibility = 'hidden';
-            } else {
-                globe1.style.transform = 'scale(0.5) translate(40vw, 80vw)';
-                globe1.classList.add('reshap');
-                smallGlobe.style.transform = 'translate(0, 0)';
-                section2.style.visibility = 'visible';
-            }
-
             
         });
         document.addEventListener('DOMContentLoaded', function() {
