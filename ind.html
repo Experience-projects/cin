@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effet Parallax avec Transition Vers le Haut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Backgrounds pour chaque section */
+        #section1 { background: #FFD700; }
+        #section2 { background: #222; color: #fff; }
+        #section3 { background: #555; color: #fff; }
+        #section4 { background: #888; color: #fff; }
+        #section5 { background: #000; color: #fff; }
+
+        h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        /* Styles par défaut pour les sections */
+        .section-content {
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        /* Quand la section est active */
+        .section-content.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Transition de la section en sortie (quand on scroll vers le haut) */
+        .section-content.exit {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        /* Masquer la scrollbar */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="section1">
+        <div class="section-content">
+            <h1>Section 1</h1>
+        </div>
+    </section>
+
+    <section id="section2">
+        <div class="section-content">
+            <h1>Section 2</h1>
+        </div>
+    </section>
+
+    <section id="section3">
+        <div class="section-content">
+            <h1>Section 3</h1>
+        </div>
+    </section>
+
+    <section id="section4">
+        <div class="section-content">
+            <h1>Section 4</h1>
+        </div>
+    </section>
+
+    <section id="section5">
+        <div class="section-content">
+            <h1>Section 5</h1>
+        </div>
+    </section>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        let lastScrollTop = 0;
+
+        // Fonction pour vérifier la direction du scroll et appliquer les transitions
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            sections.forEach((section, index) => {
+                const content = section.querySelector('.section-content');
+                const rect = section.getBoundingClientRect();
+
+                // Vérifier si l'utilisateur fait défiler vers le haut ou vers le bas
+                if (scrollTop > lastScrollTop) {
+                    // Scroll vers le bas
+                    if (rect.top < window.innerHeight && rect.bottom >= window.innerHeight / 2) {
+                        content.classList.add('active');
+                        content.classList.remove('exit');
+                    }
+                } else {
+                    // Scroll vers le haut
+                    if (rect.bottom < window.innerHeight) {
+                        content.classList.add('exit');
+                        content.classList.remove('active');
+                    }
+                }
+            });
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // éviter les valeurs négatives
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('load', handleScroll);
+    </script>
+</body>
+</html>
