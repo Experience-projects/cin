@@ -1,0 +1,89 @@
+#video-bg {
+    position: absolute;
+    top: 3250px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background: url('../assets/sect-4-bg.mp4') center/cover no-repeat;
+    /* position: relative; */
+    /* overflow: hidden; */
+}
+
+.section4 .content {
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section4 .planet-container {
+    margin-top: -300px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.sect4-logo {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    width: 250%;
+    /* Ensure the image takes the full width of the container */
+    max-width: 1000px;
+    /* Set a max width to control the image size */
+    height: auto;
+    /* Maintain the aspect ratio */
+    /* display: block; */
+    margin-top: 350px;
+    margin-bottom: 100px;
+    margin-left: -250px;
+    /* margin-right: 0px; */
+    /* Ensure the image is treated as a block-level element */
+    /* margin: 0 auto; */
+    /* Horizontally center the image */
+}
+
+.section4 .services {
+    margin-top: -250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -60%);
+    width: 80%;
+    /* Adjust the circle diameter */
+    height: 800px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.section4 .service {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    size: 5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Hover effect for each service link */
+.section4 .service:hover {
+    transform: scale(1.2);
+}

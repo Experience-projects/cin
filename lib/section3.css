@@ -1,0 +1,118 @@
+/* Section 3 styling */
+.section3 {
+    position: relative;
+    height: 100vh;
+    background: url('../assets/section3/background.jpg') center/cover no-repeat;
+    /* Background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Prevent overflow */
+    padding: 0;
+    margin: 0;
+    /* margin-bottom: 50px; */
+    /* box-sizing: border-box; */
+}
+
+.section3-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.section3 .text {
+    margin-top: -400px;
+    /* margin-bottom: 200px; */
+    /* Adjust spacing as needed */
+}
+
+.section3 .text h1, .section3 .text h2 {
+    color: #ffffff;
+    /* Text color */
+}
+.section3 .text h1 {
+    margin-bottom: 20px;
+    font-size: 6rem;
+}
+
+.section3 .text p {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-top: 50px;
+}
+
+/* Globe styling */
+.section3 .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.section3 #current-globe {
+   
+    width: 1000px;
+    height: auto;
+    /* Adjust image size */
+    margin-bottom: -700px;
+    /* margin-left: 100px; */
+    transition: all 0.5s ease-in-out;
+    /* Smooth transition */
+    z-index: -21;
+}
+
+/* Planet links styling */
+.section3 .planet-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .planet-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    /* Positioning relative to the globe */
+    width: 100%;
+}
+
+.section3 .planet-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+
+.section3 .planet-links a:hover {
+    color: #ffcc00;
+    /* Highlight color */
+}
+/* Initial state for smooth transitions */
+.section3 .text h1, .text h2, .text p {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section3 .text h1, .text h2, .text p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section3 .text h1.hidden, .text h2.hidden, .text p.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.section3 .text h1.visible, .text h2.visible, .text p.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
