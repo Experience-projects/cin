@@ -1,98 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="lib/sect-scroll.scss" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <section class="background">
-          <div class="content-wrapper">
-            <p class="content-title">Full Page Parallax Effect</p>
-            <p class="content-subtitle">Scroll down and up to see the effect!</p>
-          </div>
-        </section>
-        <section class="background">
-          <div class="content-wrapper">
-            <p class="content-title">Cras lacinia non eros nec semper.</p>
-            <p class="content-subtitle">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut massa mattis nibh semper pretium.</p>
-          </div>
-        </section>
-        <section class="background">
-          <div class="content-wrapper">
-            <p class="content-title">Etiam consequat lectus.</p>
-            <p class="content-subtitle">Nullam tristique urna sed tellus ornare congue. Etiam vitae erat at nibh aliquam dapibus.</p>
-          </div>
-        </section>
+    <link href="lib/sec1-bot.css" rel="stylesheet">
+    <link href="lib/section1.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: transform 10s ease-in-out;
+}
+
+#section1 {
+  /*background-color: #ff6f61;*/
+}
+
+#section2 {
+  background-color: #4db6ac;
+}
+
+#section3 {
+  background-color: #ffd54f;
+}
+
+#section4 {
+  background-color: #64b5f6;
+}
+
+.content h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+  </style>
+  </head>
+  <body>
+    <section class="section" id="section1">
+      <div class="content">
+        <video autoplay muted loop id="background-video">
+          <source src="assets/section1/bac-vid.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="header">
+          <img
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-center"
+            data-aos-duration="1500"
+            src="assets/cin-logo.png" alt>
+          <h1
+            data-aos="zoom-in"
+            data-aos-duration="2000">creativity in nature</h1>
+          <h2
+            data-aos="zoom-in"
+            data-aos-delay="2000"
+            data-aos-duration="2500">The shining star of digital success</h2>
+          <button
+            data-aos="zoom-in"
+            data-aos-delay="2500"
+            data-aos-duration="2000" class="button-84" role="button">MAKE A WISH</button>
+        </div>
+        <div class="footer">
+          <img id="glob1" src="assets/glob1.gif" alt>
+        </div>
       </div>
-      <script>
-        // ------------- VARIABLES ------------- //
-        var ticking = false;
-        var isFirefox = (/Firefox/i.test(navigator.userAgent));
-        var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-        var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
-        var slideDurationSetting = 600; //Amount of time for which slide is "locked"
-        var currentSlideNumber = 0;
-        var totalSlideNumber = $(".background").length;
+    </section>
 
-        // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
-        function parallaxScroll(evt) {
-        if (isFirefox) {
-            //Set delta for Firefox
-            delta = evt.detail * (-120);
-        } else if (isIe) {
-            //Set delta for IE
-            delta = -evt.deltaY;
-        } else {
-            //Set delta for all other browsers
-            delta = evt.wheelDelta;
-        }
+    <section class="section" id="section2">
+      <div class="content">
+        <h1>Section 2</h1>
+      </div>
+    </section>
 
-        if (ticking != true) {
-            if (delta <= -scrollSensitivitySetting) {
-            //Down scroll
-            ticking = true;
-            if (currentSlideNumber !== totalSlideNumber - 1) {
-                currentSlideNumber++;
-                nextItem();
-            }
-            slideDurationTimeout(slideDurationSetting);
-            }
-            if (delta >= scrollSensitivitySetting) {
-            //Up scroll
-            ticking = true;
-            if (currentSlideNumber !== 0) {
-                currentSlideNumber--;
-            }
-            previousItem();
-            slideDurationTimeout(slideDurationSetting);
-            }
-        }
-        }
+    <section class="section" id="section3">
+      <div class="content">
+        <h1>Section 3</h1>
+      </div>
+    </section>
 
-        // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
-        function slideDurationTimeout(slideDuration) {
-        setTimeout(function() {
-            ticking = false;
-        }, slideDuration);
-        }
+    <section class="section" id="section4">
+      <div class="content">
+        <h1>Section 4</h1>
+      </div>
+    </section>
 
-        // ------------- ADD EVENT LISTENER ------------- //
-        var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-        window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
+    <script src="lib/js/transition.js"></script>
+    <script>
+       // new CircleType(document.getElementById('planet-name')).radius(180);
+        AOS.init();
+    let currentSection = 0;
+const sections = document.querySelectorAll('.section');
 
-        // ------------- SLIDE MOTION ------------- //
-        function nextItem() {
-        var $previousSlide = $(".background").eq(currentSlideNumber - 1);
-        $previousSlide.removeClass("up-scroll").addClass("down-scroll");
-        }
+document.addEventListener('wheel', (event) => {
+  if (event.deltaY > 0) {
+    // Scrolling down
+    if (currentSection < sections.length - 1) {
+      currentSection++;
+      scrollToSection(currentSection);
+    }
+  } else {
+    // Scrolling up
+    if (currentSection > 0) {
+      currentSection--;
+      scrollToSection(currentSection);
+    }
+  }
+});
 
-        function previousItem() {
-        var $currentSlide = $(".background").eq(currentSlideNumber);
-        $currentSlide.removeClass("down-scroll").addClass("up-scroll");
-        }
-      </script>
-</body>
+function scrollToSection(sectionIndex) {
+  sections[sectionIndex].scrollIntoView({
+    behavior: 'smooth'
+  });
+}
+
+  </script>
+  </body>
 </html>

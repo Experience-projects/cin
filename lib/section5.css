@@ -1,5 +1,5 @@
 .section5 {
-    margin-top: 5000px;
+    /* margin-top: 5000px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,5 +67,80 @@
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* Animation for rotating the images */
+@keyframes rotateImage {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Adjustments */
+
+/* For large tablets and small desktops */
+@media (max-width: 1200px) {
+    .section5 {
+        padding: 150px;
+    }
+
+    .section5 .content .sect5-logo {
+        width: 250px;
+    }
+
+    .satellite-link {
+        width: 70px;
+    }
+}
+
+/* For tablets */
+@media (max-width: 992px) {
+    .section5 {
+        padding: 100px;
+    }
+
+    .section5 .content .sect5-logo {
+        width: 200px;
+    }
+
+    .satellite-link {
+        width: 60px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .section5 {
+        flex-direction: column;
+        padding: 50px;
+        height: auto;
+    }
+
+    .section5 .content .sect5-logo {
+        width: 150px;
+    }
+
+    .satellite-link {
+        width: 50px;
+    }
+}
+
+/* For small mobile devices */
+@media (max-width: 480px) {
+    .section5 {
+        padding: 30px;
+    }
+
+    .section5 .content .sect5-logo {
+        width: 120px;
+    }
+
+    .satellite-link {
+        width: 40px;
     }
 }

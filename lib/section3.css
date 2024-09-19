@@ -2,7 +2,8 @@
 .section3 {
     position: relative;
     height: 100vh;
-    background: url('../assets/section3/background.jpg') center/cover no-repeat;
+    background: url('../assets/section2/Nebula_1.jpg') center/cover no-repeat;
+    /* background: url('../assets/section3/background.jpg') center/cover no-repeat; */
     /* Background image */
     display: flex;
     justify-content: center;
@@ -33,6 +34,7 @@
     color: #ffffff;
     /* Text color */
 }
+
 .section3 .text h1 {
     margin-bottom: 20px;
     font-size: 6rem;
@@ -53,7 +55,7 @@
 }
 
 .section3 #current-globe {
-   
+
     width: 1000px;
     height: auto;
     /* Adjust image size */
@@ -95,6 +97,7 @@
     color: #ffcc00;
     /* Highlight color */
 }
+
 /* Initial state for smooth transitions */
 .section3 .text h1, .text h2, .text p {
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -114,5 +117,3 @@
     opacity: 1;
     transform: translateY(0);
 }
-
-

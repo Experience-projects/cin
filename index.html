@@ -12,17 +12,59 @@
     <link href="lib/section5.css" rel="stylesheet"> 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        
-        body{
-            background-color: black !important;
+        body, html {
+            height: 100%;
+            scroll-behavior: smooth;
+            /*overflow-x: hidden;*/
         }
-        
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge, and Firefox */
+        body {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+
+        /* Allow scrolling but hide the scrollbar */
+        body {
+            overflow-y: scroll; /* Enable vertical scrolling */
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: transform 0.7s ease;
+        }
+        /* For a specific section or div */
+        .section {
+            overflow: hidden; /* Completely hides the scrollbar and disables scrolling */
+            overflow-y: scroll; /* Allows vertical scrolling but hides the scrollbar */
+        }
+
+        /* Hide scrollbar for the element in most browsers */
+        .section::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar in Firefox, Edge, and IE */
+        .section {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;     /* Firefox */
+        }
+
+
+
 
     </style>
 </head>
 <body>
     <!-- Section1 -->
-    <section id="section1" class="section1">
+    <section id="section1" class="section section1">
         <video autoplay muted loop id="background-video">
             <source src="assets/section1/bac-vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -52,7 +94,7 @@
     </section>
 
     <!-- Section2 -->
-    <section id="section2" class="section2">
+    <section id="section2" class="section section2">
         <div class="section2-content">
             <div
                 data-aos="zoom-out-up"
@@ -70,7 +112,7 @@
 
 
     <!-- Section 3 -->
-    <section id="section3" class="section3">
+    <section id="section3" class="section section3">
         <div class="section3-content">
             <div class="text">
                 <h1 id="section-title">Why Choose Us?</h1>
@@ -80,8 +122,7 @@
             </div>
             <div class="footer">
                 <div class="planet-container">
-                    <img data-aos="fade-down-left" data-aos-duration="500" src="assets/glob1.gif" alt="Current Globe" id="current-globe">
-                    <div class="planet-links">
+                    <div class="planet-links" id="planet-name">
                         <a href="#" data-planet="Mercury" data-description="The smallest planet in our solar system.">Mercury</a>
                         <a href="#" data-planet="Venus" data-description="The second planet from the sun, known for its thick atmosphere.">Venus</a>
                         <a href="#" data-planet="Earth" data-description="Our home planet, the only known planet to support life.">Earth</a>
@@ -98,7 +139,7 @@
     </section>
 
     <!-- Section 4 -->
-    <section id="section4" class="section4">
+    <section id="section4" class="section section4">
          <video autoplay muted loop id="video-bg">
             <source src="assets/sect-4-bg.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -106,34 +147,37 @@
         <div class="content">
             <div class="planet-container">
                 <img data-aos="zoom-in" data-aos-duration="2500" src="assets/cin-logo.png" alt="Current Globe" class="sect4-logo">
-                <div class="services">
-                    <a href="#" class="service" style="transform: rotate(0deg) translate(400px) rotate(0deg);">SOCIAL MEDIA OPTIMISATION</a>
-                    <a href="#" class="service" style="transform: rotate(40deg) translate(200px) rotate(-40deg);">INFLUENCER MARKETING</a>
-                    <a href="#" class="service" style="transform: rotate(320deg) translate(450px, -60px) rotate(-320deg);">CREATIVE DESIGN</a>
-                    <a href="#" class="service" style="transform: rotate(120deg) translate(400px) rotate(-120deg);"></a>
+                <!-- <div class="services">
+
+                    <a href="#" class="service" style="transform: rotate(0deg) translate(410px) rotate(0deg);">SOCIAL MEDIA OPTIMISATION</a>
+                    <a href="#" class="service" style="transform: rotate(40deg) translate(180px) rotate(-40deg);">INFLUENCER MARKETING</a>
+                    <a href="#" class="service" style="transform: rotate(320deg) translate(550px, -60px) rotate(-320deg);">CREATIVE DESIGN</a>
+                    <a href="#" class="service" style="transform: rotate(120deg) translate(400px) rotate(-120deg);">aaa</a>
                     <a href="#" class="service" style="transform: rotate(160deg) translate(250px) rotate(-160deg);">PAY PER CLICK</a>
-                    <a href="#" class="service" style="transform: rotate(200deg) translate(400px, -100px) rotate(-200deg);">SEARCH ENGINE OPTIMISATION</a>
+                    <a href="#" class="service" style="transform: rotate(200deg) translate(400px, -80px) rotate(-200deg);">SEARCH ENGINE OPTIMISATION</a>
                     <a href="#" class="service" style="transform: rotate(200deg) translate(400px, 70px) rotate(-200deg);">REVENUE MANAGEMENT</a>
-                    <a href="#" class="service" style="transform: rotate(240deg) translate(400px) rotate(-240deg);">WEBSITE DESIGN</a>
-                    <a href="#" class="service" style="transform: rotate(280deg) translate(400px) rotate(-280deg);">ONLINE REPUTATION MANAGEMENT</a>
-                    <a href="#" class="service"  style="transform: rotate(320deg) translate(400px, 80px) rotate(-320deg);">PHOTOGRAPHY/VIDEOGRAPHY</a>
-                <!-- <a href="#" class="service" data-aos="zoom-in" data-aos-delay="500" style="transform: rotate(0deg) translate(400px) rotate(0deg);">SOCIAL MEDIA OPTIMISATION</a>
-                    <a href="#" class="service" data-aos="zoom-in" data-aos-delay="700" style="transform: rotate(40deg) translate(200px) rotate(-40deg);">INFLUENCER MARKETING</a>
-                    <a href="#" class="service" data-aos="zoom-in" data-aos-delay="900" style="transform: rotate(320deg) translate(450px, -60px) rotate(-320deg);">CREATIVE DESIGN</a>
-                    <a href="#" class="service" data-aos="zoom-in" data-aos-delay="1100" style="transform: rotate(120deg) translate(400px) rotate(-120deg);"></a>
-                    <a href="#" class="service" data-aos="zoom-in" data-aos-delay="1300" style="transform: rotate(160deg) translate(250px) rotate(-160deg);">PAY PER CLICK</a>
-                    <a href="#" class="service" data-aos="fade-in" data-aos-delay="1500" style="transform: rotate(200deg) translate(400px, -100px) rotate(-200deg);">SEARCH ENGINE OPTIMISATION</a>
-                    <a href="#" class="service" data-aos="fade-in" data-aos-delay="1700" style="transform: rotate(200deg) translate(400px, 70px) rotate(-200deg);">REVENUE MANAGEMENT</a>
-                    <a href="#" class="service" data-aos="fade-in" data-aos-delay="1900" style="transform: rotate(240deg) translate(400px) rotate(-240deg);">WEBSITE DESIGN</a>
-                    <a href="#" class="service" data-aos="fade-in" data-aos-delay="2100" style="transform: rotate(280deg) translate(400px) rotate(-280deg);">ONLINE REPUTATION MANAGEMENT</a>
-                    <a href="#" class="service" data-aos="fade-in" data-aos-delay="2300"  style="transform: rotate(320deg) translate(400px, 80px) rotate(-320deg);">PHOTOGRAPHY/VIDEOGRAPHY</a> -->
+                    <a href="#" class="service" style="transform: rotate(240deg) translate(500px, -80px) rotate(-240deg);">WEBSITE DESIGN</a>
+                    <a href="#" class="service" style="transform: rotate(280deg) translate(500px) rotate(-280deg);">ONLINE REPUTATION MANAGEMENT</a>
+                    <a href="#" class="service"  style="transform: rotate(320deg) translate(500px, 150px) rotate(-320deg);">PHOTOGRAPHY/VIDEOGRAPHY</a>
+                </div> -->
+                 <div class="services">
+                    <a href="#" class="service" >SOCIAL MEDIA OPTIMISATION</a>
+                    <a href="#" class="service" >INFLUENCER MARKETING</a>
+                    <a href="#" class="service" >CREATIVE DESIGN</a>
+                    <!-- <a href="#" class="service" >aaa</a> -->
+                    <a href="#" class="service" >PAY PER CLICK</a>
+                    <a href="#" class="service" >SEARCH ENGINE OPTIMISATION</a>
+                    <a href="#" class="service" >REVENUE MANAGEMENT</a>
+                    <a href="#" class="service" >WEBSITE DESIGN</a>
+                    <a href="#" class="service" >ONLINE REPUTATION MANAGEMENT</a>
+                    <a href="#" class="service" >PHOTOGRAPHY/VIDEOGRAPHY</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Section 5 -->
-    <section id="section5" class="section5">
+    <section id="section5" class="section section5">
         <div class="content">
             <img data-aos="zoom-out" data-aos-duration="1500" src="assets/cin-logo.png" alt="Current Globe" class="sect5-logo">
             <div data-aos="zoom-out" data-aos-duration="1500" class="image-wrapper">
@@ -290,52 +334,74 @@
 
 
     <!-- Footer -->
-     <section id="footer" class="footer">
+     <!-- <section id="footer" class="footer">
             <div class="content">
                 <div class="footer-left">
                     <p>&copy; 2024 Your Company Name. All rights reserved.</p>
                 </div>
             </div>
-        </section>
-
+        </section> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/peterhry/CircleType@2.3.1/dist/circletype.min.js"></script>
+    <script src="lib/js/transition.js"></script>
     <script>
+       // new CircleType(document.getElementById('planet-name')).radius(180);
         AOS.init();
-        window.addEventListener('scroll', function() {
+        /*window.addEventListener('scroll', function() {
             const globe1 = document.getElementById('glob1');
             const smallGlobe = document.getElementById('small-globe');
             const section1 = document.getElementById('section1');
             const section2 = document.getElementById('section2');
-            const section3 = document.getElementById('section3');
             const section1Top = section1.getBoundingClientRect().top;
             const section2Top = section2.getBoundingClientRect().top;
-            const section3Top = section3.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
 
-            // Effect when Section 1 is scrolled out of view
+            // When Section 1 starts to scroll out of view, move the globe to the center
             if (section1Top < 0) {
-                globe1.style.transform = 'scale(0.5) translate(40vw, 80vw)';
-                globe1.classList.add('reshap');
+                globe1.style.transform = 'scale(0.5) translate(0, 80vw)';
+                globe1.style.position = 'fixed';
+                globe1.style.left = '70%';
+                globe1.style.top = '50%';
+                 setTimeout(() => {
+                    globe1.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                    globe1.classList.add('reshap');
+                }, 10);
+                //globe1.style.transition-timing-function = 'ease-in';
+                //globe1.style.transform = 'translate(-50%, -50%) scale(0.5)';
+                //globe1.classList.add('reshap');
                 smallGlobe.style.transform = 'translate(0, 0)';
                 section2.style.visibility = 'visible';
+               
             } else {
+                // Reset the globe back to its original position in section 1
+                globe1.style.position = 'absolute';
+                globe1.style.top = '';
+                globe1.style.left = '';
                 globe1.style.transform = 'scale(1) translateX(0)';
+                globe1.style.transition =  'transform 2s ease, top 2s ease, left 2s ease';
                 globe1.classList.remove('reshap');
                 smallGlobe.style.transform = 'translate(50px, 50px)';
                 section2.style.visibility = 'hidden';
             }
-            
         });
+*/
         document.addEventListener('DOMContentLoaded', function() {
             const sectionTitle = document.getElementById('section-title');
             const sectionSubtitle = document.getElementById('section-subtitle');
             const sectionDescription = document.getElementById('section-description');
             const planetLinks = document.querySelectorAll('.planet-links a');
+            //const circleType = new CircleType(document.getElementById('planet-name')).radius(180);
 
             planetLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault(); // Prevent default link behavior
-
+                    // Remove active state from all planets
+                    planetLinks.forEach(link => link.style.transform = 'translateY(0)');
+                    
+                    // Set the clicked link to move up slightly
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-10px)'; // Reset position
+                    }, 300); // Reset after a short delay
                     // Get data attributes from the clicked link
                     const planet = this.getAttribute('data-planet');
                     const description = this.getAttribute('data-description');
@@ -360,7 +426,9 @@
                 });
             });
         });
-
+ // Initialize CircleType for circular arrangement of planet names
+    //const circleType = new CircleType(document.getElementById('planet-name')).radius(180);
+    //$(circleType.element).fitText();
 
     </script>
     <script>

@@ -1,20 +1,21 @@
-
 /* Section 2 styling */
 .section2 {
     /* position: relative; */
-    height: 100vh;
     background: url('../assets/section2/Nebula_1.jpg') center/cover no-repeat;
     /* Section 2 background */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-top: -100px; */
     box-sizing: border-box;
+
+    z-index: 1;
+    /* Ensure this section comes on top of the video */
 }
 
 .section2-content {
     display: flex;
     align-items: center;
+    z-index: 2;
 }
 
 .section2 .text {

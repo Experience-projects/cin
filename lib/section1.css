@@ -1,6 +1,8 @@
 /* Full-screen section */
 #background-video {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
+    /* Keep the video fixed while scrolling */
     top: 0;
     left: 0;
     width: 100%;
@@ -17,7 +19,7 @@
     align-items: center;
     height: 100vh;
     text-align: center;
-    margin-top: 5%;
+    /* margin-top: 5%; */
 }
 
 .section1 .header, .section1 .footer {
@@ -67,6 +69,7 @@
     width: 1000px;
     height: 800px;
     margin-bottom: -60%;
+    z-index: 2;
 }
 
 /* Responsive adjustments for Section 1 */
