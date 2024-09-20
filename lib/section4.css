@@ -1,6 +1,6 @@
-#video-bg {
-    position: absolute;
-    top: 3250px;
+/*#video-bg {
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -12,9 +12,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: url('../assets/sect-4-bg.mp4') center/cover no-repeat; */
-    /* position: relative; */
-    /* overflow: hidden; */
+}*/
+#section4 {
+    position: relative;
+    overflow: hidden; /* Prevents scrolling if video overflows */
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video covers the section without distortion */
+    z-index: -1; /* Places the video behind the content */
 }
 
 .section4 .content {

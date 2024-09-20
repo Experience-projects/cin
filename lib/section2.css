@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    height: 100vh;
 
     z-index: 1;
     /* Ensure this section comes on top of the video */
